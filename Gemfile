@@ -35,8 +35,8 @@ gem 'material_icons'
 gem 'redis', '~> 3.0.0'
 
 group :test do
-  gem "factory_bot"
-  gem "ffaker"
+  gem 'factory_bot_rails'
+  gem "faker"
 end
 
 group :development, :test do

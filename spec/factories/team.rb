@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :team do
-    slug    { FFaker::Team.name }
+    slug    { Faker::Lorem.word }
     user
   end
  end

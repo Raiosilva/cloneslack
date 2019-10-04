@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :message do
-    body    {FFaker::Lorem.sentence}
+    body    { Faker::Lorem.sentence }
     user
   end
  end
