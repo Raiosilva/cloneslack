@@ -10,9 +10,13 @@
 
   <body>
 
-      <header>
+       <header>
         <%= render "shared/navbar" %>
-        <%= render "shared/sidebar" %>
+        <%
+=begin%>
+ <%= render "shared/sidebar" %> 
+<%
+=end%>
       </header>
 
     <main>
@@ -29,7 +33,6 @@
           <%= render "team_users/remove_modal" %>
           <%= render "channels/add_modal" %>
           <%= render "channels/remove_modal" %>
-        <% end %>
       <% end %>
     <% end %>
 
