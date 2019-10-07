@@ -1,24 +1,69 @@
-# README
+# ChatCloneSlack
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Create your team. Application designed in order to manage your teams.
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+The instructions will provide a copy of the project to run on local machine.
 
-* System dependencies
+### Prerequisites
 
-* Configuration
+You must have docker and docker-compose installed
 
-* Database creation
+```
+For more information, please see https://docs.docker.com/install/ 
+```
 
-* Database initialization
+### Installing
 
-* How to run the test suite
+After cloning the project, access the project folder in your terminal enter the following
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$ docker-compose build
+```
 
-* Deployment instructions
+```
+$ docker-compose run --rm website bundle install
+```
 
+```
+$ docker-compose run --rm website bundle exec rails db:create db:migrate
+```
+
+Enter the following command to run the server.
+
+```
+$ docker-compose up
+```
+
+Open your browser and access localhost:3000
+
+## Running the tests
+
+To run the tests run the following in your terminal
+OBS.: As the project is still under development many tests will go wrong. Feel free to help.
+```
+$ docker-compose run --rm website bundle exec rspec
+```
+
+## Built With
+
+* Ruby on Rails
+* PostgreSQL
+* MaterializeCSS
+* Redis
+* MailCatcher
+* Devise
+* CoffeScript
 * ...
+
+
+## Author
+
+* **Raimundo Oliveira** - *Initial work* [https://www.linkedin.com/in/raimundo-oliveira-2511543a/]
+
+## Idealization
+
+* On One Bit Code super full stack bootcamp.
+
+## To be continued
