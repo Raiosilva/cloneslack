@@ -1,6 +1,6 @@
 # ChatCloneSlack
 
-Create your team. Application designed in order to manage your teams.
+Create your team. Application designed in order to manage your teams..
 
 ## Getting Started
 
