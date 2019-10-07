@@ -1,0 +1,5 @@
+Grettings <%= @invite.email %>
+
+You have been invited to participate to the team <%= @invite.team.slug %> by the user <%= @invite.team.user.name %>.
+To accept this invite please click in the link below:
+<%= link_to('Confirmation', controller: :invitations, action: :show, id: @invite.token) %>

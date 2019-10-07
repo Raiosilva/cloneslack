@@ -1,0 +1,48 @@
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">
+      <h4>Invitation</h4>
+    </span>
+
+    
+      <div class="col s12">
+        <% if current_user %>
+          <% if current_user.email == @invite.email %>
+            <h6 class="teal-text">Congratulations, you have been invited to team <strong><%= @invite.team.slug %>!</strong></h6>
+            <%= form_for('invite_teams', method: :put, class: 'col s12 invite_teams_form') do %>
+              <div class="row">
+                <div class="col s12">
+                  <p>To accept this invitation and became a part of the team <%= @invite.team.slug %>, please click in the accept button.</p>
+                  <%= submit_tag('Accept', class: 'right btn') %>
+                </div>
+              </div>
+            <% end %>
+          <% else %>
+            <div class="row">
+              <div class="col s12">
+                <br/>
+                <h5 class="red-text">This invite belongs to another user, please logout and try again!</h5>
+              </div>
+            </div>
+          <% end %>
+        <% elsif @invite.accepted == false %>
+          <div class="row">
+            <h6 class="teal-text">Congratulations, you have been invited to team <strong><%= @invite.team.slug %>!</strong></h6>
+            <div class="col s12">
+              <br/>
+              <p class="red-text">Only registered users can became a team member!</p>
+              <p>To accept this invitation and became a part of the team <%= @invite.team.slug %>, please login or sign up!</p>
+              
+              <br/>
+              <a href="/users/sign_in" class="btn col s2 login_invitation_button right">Login</a>
+              <a href="/users/sign_up" class="btn col s2 right sign_up_invitation_button">Sing up</a>
+            </div>
+          </div>
+        <% else %>
+          <div class="row">
+            <h5 class="red-text">&nbsp;&nbsp;Invitation expired!</h5>
+          </div>
+        <% end %>
+      </div>
+  </div>
+</div>

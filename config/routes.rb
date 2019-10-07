@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :talks, only: [:show]
   resources :team_users, only: [:create, :destroy]
   mount ActionCable.server => '/cable'
+  resources :invite_teams, only: [:create, :show, :update]
 end
