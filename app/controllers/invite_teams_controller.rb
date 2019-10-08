@@ -37,8 +37,8 @@ class InviteTeamsController < ApplicationController
         format.html { redirect_to "/#{@invite.team.slug}" }
       else
         format.html { redirect_to main_app.root_url, notice: @invite.errors }
+      end
     end
-
   end
 
 
@@ -55,5 +55,4 @@ class InviteTeamsController < ApplicationController
   def set_invite
     @invite = Invite.find_by(token: params[:id])
   end
-
 end
